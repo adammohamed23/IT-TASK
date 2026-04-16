@@ -1,0 +1,175 @@
+.roboto-font {
+  font-family: "Roboto", sans-serif;
+  font-optical-sizing: auto;
+  font-weight: 700;
+  font-style: normal;
+  font-variation-settings: "wdth" 90;
+}
+
+body {
+  background-color: #f5f5f5;
+  margin: 0px;
+  font-family: "Roboto", sans-serif;
+}
+
+.header {
+  color: white;
+  background-color: #2c5f6f;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0px 325px;
+}
+
+.header-links a {
+  color: white;
+  padding: 5px 20px;
+  text-decoration: none;
+  border-radius: 15px;
+}
+
+.header-links a:hover {
+  background-color: #2c5f6f;
+}
+
+.landing {
+  height: 200px;
+  background-color: white;
+  padding: 30px;
+  border-radius: 8px;
+  width: 1200px;
+  margin: 25px auto 0;
+  box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+  color: #101010;
+  font-weight: 500;
+}
+
+.courses {
+  height: 450px;
+  background-color: white;
+  padding: 30px;
+  border-radius: 8px;
+  width: 1200px;
+  margin: 25px auto;
+  box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+  color: #101010;
+  font-weight: 500;
+}
+
+.add-course {
+  height: 700px;
+  background-color: white;
+  padding: 30px;
+  border-radius: 8px;
+  width: 1200px;
+  margin: 25px auto;
+  box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+  color: #101010;
+  font-weight: 500;
+}
+
+.contact {
+  height: 600px;
+  background-color: white;
+  padding: 30px;
+  border-radius: 8px;
+  width: 1200px;
+  margin: 25px auto;
+  box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+  color: #101010;
+  font-weight: 500;
+}
+
+
+.table-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 15px 10px;
+  background-color: #2c5f6f;
+  color: white;
+  font-weight: 600;
+  border-radius: 8px 8px 0 0;
+}
+
+.table-header p {
+  flex: 1;
+  margin: 0;
+  padding: 0 10px;
+}
+
+.table {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 15px 10px;
+  border-bottom: 1px solid #e0e0e0;
+}
+
+.table p {
+  flex: 1;
+  margin: 0;
+  padding: 0 10px;
+}
+
+.form-container {
+  max-width: 600px;
+  margin: 20px 0px;
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  padding: 20px 0px;
+  color: #333;
+}
+
+.input-group {
+  margin-bottom: 20px;
+}
+
+label {
+  display: block;
+  font-weight: bold;
+  margin-bottom: 8px;
+  color: #1a5e71; /* Teal-dark color from image */
+  font-size: 0.95rem;
+}
+
+input[type="text"],
+textarea {
+  width: 100%;
+  padding: 12px;
+  border: 1px solid #ddd;
+  border-radius: 6px;
+  box-sizing: border-box; /* Ensures padding doesn't affect width */
+  font-size: 1rem;
+  color: #555;
+  transition:
+    border-color 0.2s,
+    box-shadow 0.2s;
+}
+
+::placeholder {
+  color: #aaa;
+}
+
+input[type="text"]:focus,
+textarea:focus {
+  outline: none;
+  border-color: #5ba4b8;
+  box-shadow: 0 0 5px rgba(91, 164, 184, 0.5);
+}
+
+.btn-save {
+  width: 100%;
+  background-color: #1a5e71; /* Dark teal */
+  color: white;
+  padding: 14px;
+  border: none;
+  border-radius: 6px;
+  font-size: 1.1rem;
+  font-weight: bold;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+.btn-save:hover {
+  background-color: #144a59;
+}

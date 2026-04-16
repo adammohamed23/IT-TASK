@@ -1,0 +1,62 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Google+Sans:ital,opsz,wght,GRAD@0,17..18,700,50;1,17..18,700,50&family=Roboto:ital,wdth,wght@0,75..100,100..900;1,75..100,100..900&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="style.css" />
+    <title>Personal Course Organizer</title>
+  </head>
+
+  <body>
+    <!--Header-->
+    <div class="header roboto-font">
+      <h1>Course Orgainzer</h1>
+      <div class="header-links">
+        <a href="index.html">Home</a>
+        <a href="my courses.html">My Courses</a>
+        <a href="Add courses.html">Add Course</a>
+        <a href="Contact us.html">Contact Us</a>
+      </div>
+    </div>
+
+    <!--Landing Page-->
+    <div class="add-course roboto-font">
+      <h1>Add New Course</h1>
+      <hr color="#cfcfcf" />
+      <h3>Fill out the form below to add a new course to your academic records.</h3>
+      <div class="form-container">
+        
+    <form id="course-form">
+    
+    <div class="input-group">
+      <label for="courseName">Course Name:</label>
+      <input type="text" id="courseName" placeholder="e.g., Database Systems">
+    </div>
+
+    <div class="input-group">
+      <label for="instructor">Instructor:</label>
+      <input type="text" id="instructor" placeholder="Instructor's name">
+    </div>
+
+    <div class="input-group">
+      <label for="credits">Credit Hours:</label>
+      <input type="text" id="credits" placeholder="e.g., 3">
+    </div>
+
+    <div class="input-group">
+      <label for="notes">Notes & Objectives:</label>
+      <textarea id="notes" rows="4" placeholder="Enter any specific notes or goals for this course..."></textarea>
+    </div>
+
+    <button type="submit" class="btn-save">Save Course</button>
+    
+  </form>
+</div>
+    </div>
+  </body>
+</html>
