@@ -8,9 +8,8 @@
 
 body {
   background-color: #f5f5f5;
-  margin: 0;
+  margin: 0px;
   font-family: "Roboto", sans-serif;
-  line-height: 1.6;
 }
 
 .header {
@@ -19,72 +18,72 @@ body {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 10px 5%;
-  flex-wrap: wrap;
-}
-
-.header h1 {
-  margin: 10px 0;
-}
-
-.header-links {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 10px;
+  padding: 0px 5%; /* Changed from 325px to 5% so it doesn't squash on Android */
 }
 
 .header-links a {
   color: white;
-  padding: 8px 15px;
+  padding: 5px 20px;
   text-decoration: none;
   border-radius: 15px;
-  transition: background 0.3s;
 }
 
 .header-links a:hover {
-  background-color: #1a5e71;
+  background-color: #2c5f6f;
 }
 
+/* --- Fixed heights and widths removed here to allow Android scrolling --- */
 .landing, .courses, .add-course, .contact {
-  min-height: auto;
+  min-height: 200px; /* Changed 'height' to 'min-height' so text doesn't overflow on small screens */
   background-color: white;
   padding: 30px;
   border-radius: 8px;
-  width: 90%;
-  max-width: 1100px;
+  width: 95%;        /* Changed from 1200px to 95% for mobile */
+  max-width: 1200px; /* Keeps your original 1200px look on Desktop */
   margin: 25px auto;
-  box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+  box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
   color: #101010;
-  box-sizing: border-box;
-}
-
-.table-header, .table {
-  display: grid;
-  grid-template-columns: 2fr 1.5fr 1fr 1fr; 
-  align-items: center;
-  padding: 15px 10px;
-  gap: 10px;
+  font-weight: 500;
+  box-sizing: border-box; /* Ensures padding doesn't push the box off-screen */
 }
 
 .table-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 15px 10px;
   background-color: #2c5f6f;
   color: white;
   font-weight: 600;
   border-radius: 8px 8px 0 0;
 }
 
+.table-header p {
+  flex: 1;
+  margin: 0;
+  padding: 0 10px;
+}
+
 .table {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 15px 10px;
   border-bottom: 1px solid #e0e0e0;
 }
 
-.table p, .table-header p {
+.table p {
+  flex: 1;
   margin: 0;
+  padding: 0 10px;
 }
 
 .form-container {
-  width: 100%;
   max-width: 600px;
-  margin-top: 20px;
+  margin: 20px 0px;
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  padding: 20px 0px;
+  color: #333;
 }
 
 .input-group {
@@ -96,15 +95,30 @@ label {
   font-weight: bold;
   margin-bottom: 8px;
   color: #1a5e71;
+  font-size: 0.95rem;
 }
 
-input[type="text"], textarea {
+input[type="text"],
+textarea {
   width: 100%;
   padding: 12px;
   border: 1px solid #ddd;
   border-radius: 6px;
   box-sizing: border-box;
-  font-size: 16px;
+  font-size: 1rem;
+  color: #555;
+  transition: border-color 0.2s, box-shadow 0.2s;
+}
+
+::placeholder {
+  color: #aaa;
+}
+
+input[type="text"]:focus,
+textarea:focus {
+  outline: none;
+  border-color: #5ba4b8;
+  box-shadow: 0 0 5px rgba(91, 164, 184, 0.5);
 }
 
 .btn-save {
@@ -117,51 +131,68 @@ input[type="text"], textarea {
   font-size: 1.1rem;
   font-weight: bold;
   cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+.btn-save:hover {
+  background-color: #144a59;
 }
 
 @media (max-width: 768px) {
   .header {
-    justify-content: center;
-    text-align: center;
+    padding: 10px 20px;
+  }
+
+  .landing, .courses, .add-course, .contact {
+    width: 90%;
     padding: 20px;
+    height: auto; /* Overrides fixed heights for tablets */
   }
 
-  .header-links {
-    justify-content: center;
-    width: 100%;
-  }
+  h1 { font-size: 1.5rem; }
+  h3 { font-size: 0.95rem; }
 
-  .table-header {
-    display: none;
+  .table-header p, .table p {
+    font-size: 0.9rem;
+    padding: 0 5px;
   }
-
-  .table {
-    grid-template-columns: 1fr;
-    border: 1px solid #ddd;
-    border-radius: 8px;
-    margin-bottom: 15px;
-    padding: 20px;
-  }
-
-  .table p::before {
-    display: block;
-    font-size: 0.8rem;
-    color: #1a5e71;
-    font-weight: bold;
-    text-transform: uppercase;
-  }
-
-  .table p:nth-child(1)::before { content: "Course:"; }
-  .table p:nth-child(2)::before { content: "Instructor:"; }
-  .table p:nth-child(3)::before { content: "Credits:"; }
-  .table p:nth-child(4)::before { content: "Status:"; }
 }
 
 @media (max-width: 480px) {
-  .landing, .courses, .add-course, .contact {
-    padding: 20px;
-    width: 95%;
+  .header {
+    flex-direction: column;
+    padding: 15px;
   }
-  
-  h1 { font-size: 1.5rem; }
+
+  .header h1 {
+    margin: 0;
+    font-size: 1.3rem;
+  }
+
+  .header-links {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    margin-top: 10px;
+  }
+
+  .header-links a {
+    padding: 5px 10px;
+    font-size: 0.85rem;
+    margin: 5px;
+  }
+
+  .landing, .courses, .add-course, .contact {
+    width: 95%;
+    padding: 15px;
+    margin: 15px auto;
+    height: auto; /* Overrides fixed heights for phones */
+  }
+
+  .table-header, .table {
+    flex-direction: column; /* Stacks table data so it's readable on Android */
+    align-items: flex-start;
+  }
+
+  .table-header { display: none; } /* Optional: hides header row on tiny screens */
 }
